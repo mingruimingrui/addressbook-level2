@@ -13,7 +13,15 @@ public class Address {
     public static final String ADDRESS_VALIDATION_REGEX = ".+";
 
     public final String value;
+    private Block blockNumber;
+    private Street streetName;
+    private Unit unitNumber;
+    private PostalCode postalCodeNumber;
     private boolean isPrivate;
+    
+    private String getAddress(){
+    	return blockNumber.get() + streetName.get() + unitNumber.get() + postalCodeNumber.get();
+    }
 
     /**
      * Validates given address.
