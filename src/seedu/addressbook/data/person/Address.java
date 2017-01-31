@@ -24,7 +24,7 @@ public class Address {
     private PostalCode postalCodeNumber;
     private boolean isPrivate;
     
-    private String getAddress(){
+    public String getAddress(){
     	return blockNumber.get() + SEPARATOR + streetName.get() + SEPARATOR +
     			unitNumber.get() + SEPARATOR + postalCodeNumber.get();
     }
@@ -57,19 +57,19 @@ public class Address {
 
     @Override
     public String toString() {
-        return value;
+        return this.getAddress();
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Address // instanceof handles nulls
-                && this.value.equals(((Address) other).value)); // state check
+                || (other instanceof Address // instanceof handles nulls 
+                && this.getAddress().equals(((Address) other).getAddress())); // state check
     }
 
     @Override
     public int hashCode() {
-        return value.hashCode();
+        return this.getAddress().hashCode();
     }
 
     public boolean isPrivate() {
