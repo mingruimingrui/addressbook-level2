@@ -36,7 +36,12 @@ public class Address {
         if (!isValidAddress(trimmedAddress)) {
             throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
         }
-        this.value = trimmedAddress;
+        //this.value = trimmedAddress;
+        String[] AddressComponents = trimmedAddress.split(SEPARATOR);
+        blockNumber = new Block(AddressComponents[BLOCK_INDEX]);
+        streetName = new Street(AddressComponents[STREET_INDEX]);
+        unitNumber = new Unit(AddressComponents[UNIT_INDEX]);
+        postalCodeNumber = new PostalCode(AddressComponents[POSTAL_CODE_INDEX]);
     }
 
     /**
