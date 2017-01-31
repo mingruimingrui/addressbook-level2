@@ -126,6 +126,9 @@ public class StorageFile {
             if (loaded.isAnyRequiredFieldMissing()) {
                 throw new StorageOperationException("File data missing some elements");
             }
+            if (!path.toFile().exists()){
+            	throw new FileNotFoundException("Storage file does not exist.");
+            }
             return loaded.toModelType();
 
         /* Note: Here, we are using an exception to create the file if it is missing. However, we should minimize
