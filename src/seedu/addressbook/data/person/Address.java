@@ -12,8 +12,12 @@ public class Address {
     public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses can be in any format";
     public static final String ADDRESS_VALIDATION_REGEX = ".+";
     private static final String SEPARATOR = ", ";
+    private static final int BLOCK_INDEX = 0;
+    private static final int STREET_INDEX = 1;
+    private static final int UNIT_INDEX = 2;
+    private static final int POSTAL_CODE_INDEX = 3;
 
-    public final String value;
+    //public final String value;
     private Block blockNumber;
     private Street streetName;
     private Unit unitNumber;
