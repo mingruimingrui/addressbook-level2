@@ -7,6 +7,7 @@ import seedu.addressbook.data.exception.IllegalValueException;
  * Guarantees: immutable; is valid as declared in {@link #isValidAddress(String)}
  */
 public class Address {
+	//Will not change Address due to error committing during last tutorial
 
     public static final String EXAMPLE = "a/123, some street, #12-34, 123456";
     public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses should be "
