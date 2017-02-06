@@ -17,8 +17,7 @@ public class Contact {
      */
 	public Contact(String contact,boolean isPrivate) throws IllegalValueException {
 		this.isPrivate = isPrivate;
-		String trimmedContact = contact.trim();
-        this.value = trimmedContact;
+        this.value = contact;
 	}
 	
 	@Override
