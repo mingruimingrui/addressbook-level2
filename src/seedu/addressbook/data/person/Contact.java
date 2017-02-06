@@ -7,10 +7,6 @@ import seedu.addressbook.data.exception.IllegalValueException;
  */
 public class Contact {
 	
-	public static final String EXAMPLE = "Example of your contact input";
-	public static final String MESSAGE_CONTACT_CONSTRAINTS = "User instructions for correct input format";
-	public static final String CONTACT_VALIDATION_REGEX = "Regular expression format of correct input";
-	
 	public final String value;
 	protected boolean isPrivate;
 	
@@ -22,18 +18,8 @@ public class Contact {
 	public Contact(String contact,boolean isPrivate) throws IllegalValueException {
 		this.isPrivate = isPrivate;
 		String trimmedContact = contact.trim();
-		if (!isValidContact(trimmedContact)) {
-            throw new IllegalValueException(MESSAGE_CONTACT_CONSTRAINTS);
-        }
         this.value = trimmedContact;
 	}
-	
-    /**
-     * Checks if a given string is a valid person [contact].
-     */
-	public static boolean isValidContact(String test) {
-        return test.matches(CONTACT_VALIDATION_REGEX);
-    }
 	
 	@Override
     public String toString() {
