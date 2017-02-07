@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.junit.Test;
 
@@ -66,6 +67,14 @@ public class UtilsTest {
         assertNotUnique(null, 1, new Integer(1));
         assertNotUnique(null, null);
         assertNotUnique(null, "a", "b", null);
+        assertNotUnique(new Object(), new Object());
+        assertNotUnique(new ArrayList<Integer>(), new ArrayList<Integer>());
+        
+        ArrayList<Integer> list1 = new ArrayList<Integer>();
+        ArrayList<Integer> list2 = new ArrayList<Integer>();
+        list1.add(1);
+        list2.add(1);
+        assertNotUnique(list1, list2);
     }
 
     private void assertAreUnique(Object... objects) {
