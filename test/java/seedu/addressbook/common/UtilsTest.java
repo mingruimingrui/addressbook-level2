@@ -55,6 +55,8 @@ public class UtilsTest {
         // all objects unique
         assertAreUnique("abc", "ab", "a");
         assertAreUnique(1, 2);
+        assertAreUnique(true, false);
+        assertAreUnique(null, "", 0);
 
         // some identical objects
         assertNotUnique("abc", "abc");
