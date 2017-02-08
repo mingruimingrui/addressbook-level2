@@ -59,6 +59,6 @@ public class Phone implements Printable {
     
     @Override
     public String getPrintableString() {
-    	return "Address: " + this.toString();
+    	return "Phone: " + this.toString();
     }
 }
