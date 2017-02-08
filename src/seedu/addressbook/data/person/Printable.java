@@ -4,7 +4,7 @@ public interface Printable {
 	
 	String toString();
 	
-	default String getPrintableString() {;
+	default String getPrintableString() {
 		return this.toString();
 	}
 }
